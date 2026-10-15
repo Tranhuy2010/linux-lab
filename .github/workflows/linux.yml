@@ -1,0 +1,27 @@
+
+name: Linux Lab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+
+    steps:
+      - name: Show system information
+        run: |
+          echo "=== OS ==="
+          cat /etc/os-release
+          echo "=== CPU ==="
+          nproc
+          echo "=== RAM ==="
+          free -h
+          echo "=== DISK ==="
+          df -h /
+          echo "=== USER ==="
+          whoami
+          echo "=== IP ==="
+          hostname -I
+          
